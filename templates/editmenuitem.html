@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body><h1> Edit Menu Item </h1>
+
+<form action="#" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder = '{{item.name }}'>
+	<p>Description:</p>
+		<input type ='text' size='30' name='description' placeholder = '{{item.description}}'>
+	<p>Price:</p>
+		<input type ='text' size='30' name='price' placeholder = '{{item.price}}'>
+	<p>Course:<p>
+
+	{% if item.course == 'Computer Science' %}
+		<dd><input type ='radio' name='course' value='Computer Science'checked >Computer Science</dd>
+	{%else%}
+	<dd><input type ='radio' name='course' value='Computer Science' >Computer Science</dd>
+    {% endif %}
+
+    {% if item.course == 'Electrical and Electronics' %}
+       <dd><input type ='radio' name='course' value='Electrical and Electronics' checked>Electrical and Electronics</dd>
+
+    {%else%}
+		<dd><input type ='radio' name='course' value='Electrical and Electronics'>Electrical and Electronics</dd>
+    {% endif %}
+
+	{% if item.course == 'Civil'%}
+		<dd><input type ='radio' name='course' value='Civil'checked >Civil</dd>
+
+	{% else %}
+	   <dd><input type ='radio' name='course' value='Civil'>Civil</dd>
+
+	{% endif %}
+
+
+	{%if item.course =='Mechanical'%}
+		<dd><input type ='radio' name='course' value='Mechanical'checked >Mechanical</dd>
+	{% else %}
+		<dd><input type ='radio' name='course' value='Mechanical'>Mechanical</dd>
+	{% endif %}
+
+    {%if item.course =='Electronics and Communication'%}
+ 		<dd><input type ='radio' name='course' value='Electronics and Communication'checked >Electronics and Communication</dd>
+	{% else %}
+		<dd><input type ='radio' name='course' value='Electronics and Communication'>Electronics and Communication</dd>
+	{% endif %}
+
+
+
+<input type='submit' value='Edit'>
+
+
+<a href = '#'> Cancel </a>
+
+
+</form>
+</body>
+</html>

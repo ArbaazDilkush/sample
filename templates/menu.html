@@ -1,0 +1,157 @@
+<html>
+	
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<div class = 'pane'>
+		<h1>{{ article.name }}</h1>
+		
+		{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if items !=[] %}
+
+		<a href = "{{url_for('newMenuItem', article_id = article.id )}}">Create New Article</a>
+	</br></br>
+
+	<h2>Computer Science</h2>
+
+		{% for i in items %}
+		{% if i.course == 'Computer Science' %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editMenuItem', article_id = article.id, menu_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteMenuItem', article_id = article.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+		{% endif %}
+
+		{% endfor %}
+
+		
+
+		</br></br>
+
+	<h2>Electrical and Electronics</h2>
+
+		{% for i in items %}
+		{% if i.course == 'Electrical and Engineering' %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editMenuItem', article_id = article.id, menu_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteMenuItem', article_id = article.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+        {% endif %}
+
+		{% endfor %}
+		
+		
+
+		</br></br>
+
+	<h2>Civil</h2>
+
+		{% for i in items %}
+		{% if i.course == 'Civil' %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+	
+		<a href='{{url_for('editMenuItem', article_id = article.id, menu_id=i.id ) }}' >Edit</a>
+	
+	<a href='{{url_for('deleteMenuItem', article_id = article.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+		{% endif %}
+
+		{% endfor %}
+		
+		
+
+		</br></br>
+
+	<h2>Mechanical</h2>
+
+		{% for i in items %}
+		{% if i.course == 'Mechanical' %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+
+		<a href='{{url_for('editMenuItem', article_id = article.id, menu_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteMenuItem', article_id = article.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+{% endif %}
+
+		{% endfor %}
+		
+
+		<h2>Electronics and Communication</h2>
+
+		{% for i in items %}
+		{% if i.course == 'Electronics and communication' %}
+
+		<p>{{i.name}}</p>
+	
+
+		<p>{{i.description}}</p>
+	
+
+		<p>{{i.price}}</p>
+
+		<a href='{{url_for('editMenuItem', article_id = article.id, menu_id=i.id ) }}' >Edit</a>
+	</br>
+	<a href='{{url_for('deleteMenuItem', article_id = article.id, menu_id=i.id ) }}' >Delete</a>
+</br>
+</br>
+{% endif %}
+
+		{% endfor %}
+		
+
+		{% else %}
+		<p> You currently have no menu items. <p>
+		<a href = "{{url_for('newMenuItem', article_id = article.id )}}">Create New Article</a>
+			{% endif %}
+</div>
+	</body>
+
+</html>

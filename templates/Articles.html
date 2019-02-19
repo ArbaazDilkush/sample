@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+
+<body>
+<div class = 'pane'>
+
+<body> 
+ <div class="header">
+    <div class="inner-header">
+        <div class="logo">ARTICLES</div>
+    </div>
+ </div>
+
+ <div>
+     <ul class="nav navbar-nav navbar-right">
+            <button type="logout" name="Logout" class="glyphicon glyphicon-log-out">Logout</button><br><br>
+                    </ul>
+                </div>
+
+<a href="{{url_for('newArticle')}}" > <h3> Create a New Article </h3> </a>
+
+{% for article in articles %}
+
+
+
+<a href = "{{url_for('showMenu', article_id = article.id)}}"> <p>{{article.name}}</p></a>
+
+<p><a href = "{{url_for('editArticle',article_id = article.id)}}">Edit Article</a></p>
+
+<p> <a href = "{{url_for('deleteArticle',article_id = article.id)}}">Delete Article</a> </p>
+
+
+
+
+{% endfor %}
+
+</div>
+</body>
+
+</html>

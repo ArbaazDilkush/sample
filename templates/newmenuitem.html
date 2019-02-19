@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+<body>
+
+<h1>New Menu Item</h1>
+
+<form action="#" method = 'post'>
+
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name'>
+	<p>Description:</p>
+		<input type ='text' size='30' name='description'>
+	<p>Price:</p>
+		<input type ='text' size='30' name='price'>
+	<p>Course:</p>
+		<input type ='radio'  name='course' value ='Computer Science'>Computer Science</br>
+		<input type ='radio'  name='course' value ='Electrical and Electronics'>Electrical and Electronics</br>
+		<input type ='radio' name='course' value ='Civil'>Civil</br>
+		<input type ='radio'  name='course' value ='Mechanical'>Mechanical</br>
+		<input type="radio" name="course" value="Electronics and Communication">Electronics and Communication</br>
+	</br>
+
+
+<input type='submit' value='Create'>
+
+</form>
+
+</body>
+</html>
