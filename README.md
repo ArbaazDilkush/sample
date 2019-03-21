@@ -1,3 +1,3 @@
 # sample
 
-This is the one of the sample program of articles.
+This is the my sample program of articles.
